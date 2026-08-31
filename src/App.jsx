@@ -8,6 +8,7 @@ import Deals from './pages/Deals.jsx'
 import Research from './pages/Research.jsx'
 import Street from './pages/Street.jsx'
 import Desk from './pages/Desk.jsx'
+import CommandBar from './components/CommandBar.jsx'
 
 const nav = [
   { to: '/', label: '00/TERMINAL', end: true },
@@ -59,6 +60,7 @@ function StatusBar() {
       <span>SCRL <b>{scrl}</b></span>
       <span className="hide-m">OPEN TO <b>{profile.openTo}</b></span>
       <span className="hide-m">THEME <b>#9FF8DE</b></span>
+      <span className="hide-m"><kbd className="sb-kbd">⌘K</kbd> CMDS</span>
       <span>IST <b>{time}</b> · <span className="up">● LIVE</span></span>
     </div>
   )
@@ -101,6 +103,7 @@ export default function App() {
       <Progress />
       <Masthead />
       <ScrollToTop />
+      <CommandBar />
       <AnimatePresence mode="wait">
         <motion.main key={location.pathname}
           initial={{ opacity: 0, y: 20 }}
